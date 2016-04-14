@@ -1,0 +1,65 @@
+// $navbar-default-bg: #312312;
+$navbar-default-bg: #222;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* General */
+
+body {
+  padding-top: 60px;
+}
+
+#logo {
+  float: left;
+  margin: 10, 10, 10, 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  &:hover{
+    // background-color:;
+  }
+}
+
+.nav-item {
+  float: left;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1;
+}
+
+
+/* Home Page */
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  color: #777;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 20px;
+  border-top: 1px solid #222;
+  padding-top: 10px;
+  text-align: center;
+}
