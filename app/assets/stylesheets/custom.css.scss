@@ -11,12 +11,12 @@ $navbar-default-color: $light-orange;
 
 body {
   padding-top: 60px;
-  // background-image: url(image_path("unsplash-food-2.jpg"));
+  background-image: url(image_path("unsplash-food-2.jpg"));
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   background-blend-mode: multiply;
 }
 
@@ -64,6 +64,15 @@ h1 {
 .pagination > li > a {
   border-radius: 30%;
   margin: 3px;
+}  
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus
+.pagination > li > a:active, 
+.pagination > li > a:hover,
+.pagination > li > a:focus {
+  background-color: #288DAB;
+  border-color: #288DAB;
+  color: #fff;
 }
 .pagination > li:first-child > a, 
 .pagination > li:first-child > span,
@@ -76,6 +85,17 @@ h1 {
   margin-top: 2px;
 }
 
+.btn-info {
+    color: #fff;
+    background-color: #288DAB;
+    border-color: #288DAB;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
 
 /* Home Page */
 
@@ -86,9 +106,10 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  // font-size: 1.5em;
+  font-size: 1.3em;
   margin-bottom: 30px;
-  color: #777;
+  color: #fff;
 }
 
 .jumbotron {
@@ -150,4 +171,11 @@ footer {
   // padding-top: 10px;
   text-align: center;
   color: #fff;
+  // position: absolute;
+  // bottom: 0;
+  // width: 100%;
 }
+
+// on application.html.erb
+// <!-- Footer -->
+// <!--<%= render 'layouts/footer' %>-->

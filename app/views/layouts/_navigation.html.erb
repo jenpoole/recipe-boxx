@@ -3,13 +3,26 @@
   <div class="container">
     <%= link_to "Recipe Box", root_path, class: "", id: "logo" %>
     <div class="nav-item">
-      <%= link_to "link1", "", class: "btn btn-sm btn-default btn-warning" %>
+      <%= link_to "link1", "", class: "btn btn-sm btn-info" %>
     </div>
+    
     <div class="nav-item">
-      <%= link_to "link2", "", class: "btn btn-sm btn-default btn-warning" %>
+      <%= link_to "link2", "", class: "btn btn-sm btn-info" %>
     </div>
+    
+    <!--if a user is logged in, show link to create new recipe (and link to logout)-->
+    <% if logged_in? %>
+      <div class="nav-item">
+        <%= link_to "New Recipe", new_recipe_path, class: "btn btn-sm btn-info" %>
+      </div>
+      <div class="nav-item">
+        <%= link_to "Logout", logout_path, class: "btn btn-sm btn-danger" %>
+      </div>
+    <% else %>
+    <!--otherwise, show link to log in-->
     <div class="nav-item">
-      <%= link_to "New Recipe", new_recipe_path, class: "btn btn-sm btn-default btn-warning" %>
-    </div>
+        <%= link_to "Login", login_path, class: "btn btn-sm btn-info" %>
+      </div>
+    <% end %>
   </div>
 </header>
