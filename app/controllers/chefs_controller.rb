@@ -1,4 +1,10 @@
 class ChefsController < ApplicationController
+  before_action :find_chef, only: [:show, :edit, :update, :destroy]
+  
+  # display paginated list of all chefs on chef index
+  def index 
+    @chefs = Chef.paginate(page: params[:page], per_page: 5)
+  end
   
   # register new chef account
   def new
@@ -18,11 +24,9 @@ class ChefsController < ApplicationController
   
   # edit chef profile
   def edit 
-    @chef = Chef.find(params[:id])
   end
   
-  def update 
-    @chef = Chef.find(params[:id])
+  def update
     
     if @chef.update(chef_params)
       flash[:success] = "Your profile has been updated successfully."
@@ -32,11 +36,20 @@ class ChefsController < ApplicationController
     end
   end
   
+  # show chef profile
+  def show
+    @recipes = @chef.recipes.paginate(page: params[:page], per_page: 3) #paginate recipes shown on chef's page
+  end
+  
   
   private
   
     def chef_params
       params.require(:chef).permit(:chefname, :email, :password)
+    end
+    
+    def find_chef
+      @chef = Chef.find(params[:id])
     end
   
 end
