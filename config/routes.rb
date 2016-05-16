@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :chefs, except: [:new]
+  resources :chefs, except: [:new, :destroy]
   get '/register', to: 'chefs#new'  # custom route to register new chef
   
   # custom routes for user login/logout

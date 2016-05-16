@@ -35,10 +35,20 @@
     <div class="recipe-show-btns">
       <h5><%= link_to "View All Recipes", recipes_path, class: "btn btn-warning btn-small"  %></h5>
     
-      <!-- limit ability to edit recipe to the chef who created it-->
-      <% if logged_in? and @recipe.chef == current_user %>
-        <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class:"btn btn-success" %>
-      <% end %>
+      <!-- limit ability to edit recipe to the chef who created it, or admin user-->
+      <div class="recipe-show-btn-edit">
+        <% if logged_in? and (@recipe.chef == current_user || current_user.admin?) %>
+          <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class:"btn btn-success" %>
+        <% end %>
+      </div>
+      
+      <!-- limit ability to delete recipe to admin user -->
+      <div class="recipe-show-btn-delete">
+        <% if current_user.admin? %>
+          <%= link_to "Delete this recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
+        <% end %>
+      </div>
+      
     </div>
   </div>
 </div>
