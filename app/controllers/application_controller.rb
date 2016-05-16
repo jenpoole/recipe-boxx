@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   # make methods available to all views
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :require_user
+
   
   # find which user id is currently in session
   # store current user as variable for all views
@@ -15,5 +16,14 @@ class ApplicationController < ActionController::Base
   # check if current user is logged in (true or false)
   def logged_in?
     !!current_user
+  end
+  
+  # Only logged in users can perform certain actions, such as creating & editing recipes
+  # Users not logged in can only view recipe page and recipes index
+  def require_user
+    if !logged_in?
+      flash[:danger] = "You must be logged in to perform that action"
+      redirect_to :back
+    end  
   end
 end

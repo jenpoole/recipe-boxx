@@ -1,7 +1,7 @@
 class ChefsController < ApplicationController
   
-  before_action :find_chef, only: [:show, :edit, :update, :destroy]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :find_chef, only: [:show, :edit, :update, :destroy] # find chef before showing or editing
+  before_action :require_same_user, only: [:edit, :update]          # user can only edit their own profile
   
   # display paginated list of all chefs on chef index
   def index 
@@ -60,7 +60,7 @@ class ChefsController < ApplicationController
     def require_same_user
       if current_user != @chef
         flash[:danger] = "You can only edit your own profile"
-        redirect_to root_path
+        redirect_to :back
       end  
     end
   
