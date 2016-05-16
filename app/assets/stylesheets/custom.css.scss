@@ -11,6 +11,9 @@ $navbar-default-color: $light-orange;
 
 body {
   padding-top: 60px;
+}
+
+#homepage {
   background-image: url(image_path("unsplash-food-2.jpg"));
   background-position: center center;
   background-repeat: no-repeat;
@@ -18,6 +21,10 @@ body {
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.3);
   background-blend-mode: multiply;
+}
+
+.navbar-solid {
+  background-color: #000E2C;
 }
 
 #logo {
@@ -30,10 +37,9 @@ body {
   letter-spacing: -1px;
   padding-top: 9px;
   padding-bottom: 5px;
-  &:hover{
-    // background-color:;
-  }
+  
 }
+
 a#logo,
 a#logo:hover {
   text-decoration: none;
@@ -68,7 +74,12 @@ h1 {
   color: #288DAB;
 }  
 
-.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus
+.pagination > .active > a, 
+.pagination > .active > a:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span, 
+.pagination > .active > span:hover, 
+.pagination > .active > span:focus,
 .pagination > li > a:active, 
 .pagination > li > a:hover,
 .pagination > li > a:focus {
@@ -76,6 +87,7 @@ h1 {
   border-color: #288DAB;
   color: #fff;
 }
+
 .pagination > li:first-child > a, 
 .pagination > li:first-child > span,
 .pagination > li:last-child > a, 
@@ -97,6 +109,20 @@ h1 {
     color: #fff;
     background-color: #ec971f;
     border-color: #d58512;
+}
+
+// forms
+.form-chef,
+.form-recipe,
+.form-register {
+  background-color: #00415F !important;
+}
+
+.form-chef label,
+.form-recipe label,
+.form-register label,
+span.picture input {
+  color: #fff;
 }
 
 input, 
@@ -182,16 +208,10 @@ footer {
   // padding-top: 10px;
   text-align: center;
   color: #fff;
-  // position: absolute;
-  // bottom: 0;
-  // width: 100%;
 }
 
-// on application.html.erb
-// <!-- Footer -->
-// <!--<%= render 'layouts/footer' %>-->
-
 // Recipe Index Page 
+
 .nav-tabs {
   margin-bottom: 30px;
 }
@@ -201,7 +221,9 @@ footer {
   border: 1px solid transparent;
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
   color: #fff;
   background-color: #288DAB;
   border: 1px solid transparent;
@@ -220,7 +242,11 @@ footer {
 
 .recipe-show-btn-delete {
   margin-top: 10px;
+  margin-bottom: 50px;
 }
 .recipe-show-description {
   margin-top: 30px;
 }
+
+
+

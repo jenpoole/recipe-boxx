@@ -1,7 +1,7 @@
 <%= render 'shared/errors', obj: @chef %>
 
 <div class="row">
-  <div class="well col-md-8 col-md-offset-2">
+  <div class="well col-md-8 col-md-offset-2 form-chef">
     <%= form_for @chef do |f| %>
       <%= f.label :chefname %>
       <%= f.text_field :chefname %>
