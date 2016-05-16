@@ -2,25 +2,37 @@
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
     <%= link_to "Recipe Box", root_path, class: "", id: "logo" %>
-    <div class="nav-item">
-      <%= link_to "link1", "", class: "btn btn-sm btn-info" %>
-    </div>
     
-    <div class="nav-item">
-      <%= link_to "link2", "", class: "btn btn-sm btn-info" %>
-    </div>
-    
-    <!--if a user is logged in, show link to create new recipe (and link to logout)-->
+    <!--if a user is logged in... -->
     <% if logged_in? %>
-      <div class="nav-item">
-        <%= link_to "New Recipe", new_recipe_path, class: "btn btn-sm btn-info" %>
-      </div>
-      <div class="nav-item">
+      <!--show link to logout-->
+      <div class="nav-item navbar-right">
         <%= link_to "Logout", logout_path, class: "btn btn-sm btn-danger" %>
       </div>
+      
+      <!-- show link to edit profile-->
+      <div class="nav-item navbar-right">
+        <%= link_to "Edit Profile", edit_chef_path(current_user), class: "btn btn-sm btn-info" %>
+      </div>
+      
+      <!--show link to view profile-->
+      <div class="nav-item navbar-right">
+        <%= link_to "View Profile", chef_path(current_user), class: "btn btn-sm btn-info" %>
+      </div>
+    
+      <!--show link to create new recipe -->
+      <div class="nav-item navbar-right">
+        <%= link_to "New Recipe", new_recipe_path, class: "btn btn-sm btn-info" %>
+      </div>
+      
+      <!--show username -->
+      <!--<div class="nav-item navbar-right">-->
+      <!--  <div class="btn btn-sm btn-info"><%= current_user.chefname %></div>-->
+      <!--</div>-->
+      
     <% else %>
-    <!--otherwise, show link to log in-->
-    <div class="nav-item">
+      <!--otherwise, if user is not logged in, show link to log in-->
+      <div class="nav-item navbar-right">
         <%= link_to "Login", login_path, class: "btn btn-sm btn-info" %>
       </div>
     <% end %>

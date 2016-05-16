@@ -1,5 +1,7 @@
 class ChefsController < ApplicationController
+  
   before_action :find_chef, only: [:show, :edit, :update, :destroy]
+  before_action :require_same_user, only: [:edit, :update]
   
   # display paginated list of all chefs on chef index
   def index 
@@ -27,11 +29,12 @@ class ChefsController < ApplicationController
   def edit 
   end
   
+  # if chef profile is updated, save and redirect to chef page
+  # otherwise, render edit form again
   def update
-    
     if @chef.update(chef_params)
       flash[:success] = "Your profile has been updated successfully."
-      redirect_to recipes_path #change redirect to chef show page later
+      redirect_to chef_path(current_user) # redirect to chef show page
     else
       render 'edit'
     end
@@ -51,6 +54,14 @@ class ChefsController < ApplicationController
     
     def find_chef
       @chef = Chef.find(params[:id])
+    end
+    
+    # logged in user can only edit their own profile
+    def require_same_user
+      if current_user != @chef
+        flash[:danger] = "You can only edit your own profile"
+        redirect_to root_path
+      end  
     end
   
 end
