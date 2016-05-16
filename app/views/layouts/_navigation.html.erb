@@ -1,40 +1,48 @@
 <!-- Header to be used on all pages -->
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
-    <%= link_to "Recipe Box", root_path, class: "", id: "logo" %>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Recipe Box", root_path, class: "", id: "logo" %>
+    </div>
     
-    <!--if a user is logged in... -->
-    <% if logged_in? %>
-      <!--show link to logout-->
-      <div class="nav-item navbar-right">
-        <%= link_to "Logout", logout_path, class: "btn btn-sm btn-danger" %>
-      </div>
-      
-      <!-- show link to edit profile-->
-      <div class="nav-item navbar-right">
-        <%= link_to "Edit Profile", edit_chef_path(current_user), class: "btn btn-sm btn-info" %>
-      </div>
-      
-      <!--show link to view profile-->
-      <div class="nav-item navbar-right">
-        <%= link_to "View Profile", chef_path(current_user), class: "btn btn-sm btn-info" %>
-      </div>
-    
-      <!--show link to create new recipe -->
-      <div class="nav-item navbar-right">
-        <%= link_to "New Recipe", new_recipe_path, class: "btn btn-sm btn-info" %>
-      </div>
-      
-      <!--show username -->
-      <!--<div class="nav-item navbar-right">-->
-      <!--  <div class="btn btn-sm btn-info"><%= current_user.chefname %></div>-->
-      <!--</div>-->
-      
-    <% else %>
-      <!--otherwise, if user is not logged in, show link to log in-->
-      <div class="nav-item navbar-right">
-        <%= link_to "Login", login_path, class: "btn btn-sm btn-info" %>
-      </div>
-    <% end %>
-  </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <!--if a user is logged in... -->
+        <% if logged_in? %>
+          <!--show link to logout-->
+          <div class="nav-item navbar-right">
+            <%= link_to "Logout", logout_path, class: "btn btn-sm btn-danger" %>
+          </div>
+          
+          <!-- show link to edit profile-->
+          <div class="nav-item navbar-right">
+            <%= link_to "Edit Profile", edit_chef_path(current_user), class: "btn btn-sm btn-info" %>
+          </div>
+          
+          <!--show link to view profile-->
+          <div class="nav-item navbar-right">
+            <%= link_to "View Profile", chef_path(current_user), class: "btn btn-sm btn-info" %>
+          </div>
+        
+          <!--show link to create new recipe -->
+          <div class="nav-item navbar-right">
+            <%= link_to "New Recipe", new_recipe_path, class: "btn btn-sm btn-info" %>
+          </div>
+          
+        <% else %>
+          <!--otherwise, if user is not logged in, show link to log in-->
+          <div class="nav-item navbar-right">
+            <%= link_to "Login", login_path, class: "btn btn-sm btn-info" %>
+          </div>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  
+  </div> <!-- .container -->
 </header>

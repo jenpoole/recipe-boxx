@@ -62,8 +62,10 @@ h1 {
 }
 
 .pagination > li > a {
+  border: 1px solid #288DAB;;
   border-radius: 30%;
   margin: 3px;
+  color: #288DAB;
 }  
 
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus
@@ -97,6 +99,11 @@ h1 {
     border-color: #d58512;
 }
 
+input, 
+textarea {
+  padding: 5px;
+}
+
 /* Home Page */
 
 h1 {
@@ -123,6 +130,10 @@ h2 {
 
 .home-section-2 {
   margin-top: 30px;
+}
+
+.midrow-subtitle  {
+  margin-top: 0;
 }
 
 /* Recipes Page */
@@ -179,3 +190,34 @@ footer {
 // on application.html.erb
 // <!-- Footer -->
 // <!--<%= render 'layouts/footer' %>-->
+
+// Recipe Index Page 
+.nav-tabs {
+  margin-bottom: 30px;
+}
+
+.nav-tabs > li > a {
+  color: #288DAB;
+  border: 1px solid transparent;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #fff;
+  background-color: #288DAB;
+  border: 1px solid transparent;
+}
+
+
+// Recipe Show Page
+
+.recipe-show-summary {
+  margin-bottom: 20px;
+}
+
+.recipe-show-btns {
+  margin-top: 30px;
+}
+
+.recipe-show-description {
+  margin-top: 30px;
+}
