@@ -1,5 +1,15 @@
 <%= render 'shared/page_title', title: "All Chefs" %>
 
+<!--nav tabs linking to recipes index and chefs index-->
+<ul class="nav nav-tabs">
+  <li>
+    <%= link_to "Recipes", recipes_path %>
+  </li>
+  <li class="active">
+    <%= link_to "Chefs", chefs_path %>
+  </li>
+</ul>
+
 <!--Display chefs on page and link to their chef pages-->
 <div class="row center">
   <div class="container">

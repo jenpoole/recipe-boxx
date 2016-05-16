@@ -1,5 +1,14 @@
 <%= render 'shared/page_title', title: "All Recipes" %>
 
+<!--nav tabs linking to recipes index and chefs index-->
+<ul class="nav nav-tabs">
+  <li class="active">
+    <%= link_to "Recipes", recipes_path %>
+  </li>
+  <li>
+    <%= link_to "Chefs", chefs_path %>
+  </li>
+</ul>
 
 <% @recipes.each do |recipe| %>
   <div class="row">
