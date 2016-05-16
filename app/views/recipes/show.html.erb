@@ -45,7 +45,7 @@
       
       <!-- limit ability to delete recipe to admin user -->
       <div class="recipe-show-btn-delete">
-        <% if logged_in? and current_user.admin? %>
+        <% if current_user.admin? %>
           <%= link_to "Delete this recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
         <% end %>
       </div>
