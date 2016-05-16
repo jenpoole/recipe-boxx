@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show, :edit, :update, :like]  # find recipe before showing, editing, or liking
   before_action :require_user, except: [:show, :index]              # users not logged in can only view recipe page and recipes index
   before_action :require_same_user, only: [:edit, :update]          # user can only edit their own recipe
-  before_action :admin_user, only: :destroy                         # only admin user can delete a recipe
+  #before_action :admin_user, only: :destroy                         # only admin user can delete a recipe
   
   
   def index
@@ -77,7 +77,7 @@ class RecipesController < ApplicationController
       end  
     end
     
-    def admin_user
-      redirect_to recipes_path unless current_user.admin?
-    end
+    # def admin_user
+    #   redirect_to recipes_path unless current_user.admin?
+    # end
 end
