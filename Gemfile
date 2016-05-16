@@ -37,7 +37,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bcrypt', '3.1.7'
 
 # file handling in production
-gem 'fog', '1.35.0'
+gem 'fog', '~> 1.38'
 
 
 group :development, :test do
