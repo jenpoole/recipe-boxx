@@ -248,5 +248,40 @@ footer {
   margin-top: 30px;
 }
 
+.show-recipe-img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .col-md-2.index-recipe-img {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .navbar-right {
+    margin: 0;
+  }
+  .navbar-right {
+    margin-top: 5px;
+  }
+  .navbar-right .btn-info {
+    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 775px) {
+  #logo {
+    margin-left: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .navbar-right,
+  .navbar-right .btn-sm {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
 
 
