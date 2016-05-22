@@ -11,6 +11,7 @@ class Recipe < ActiveRecord::Base
   
   # order paginated recipes by most recently created
   default_scope -> { order(created_at: :desc) }
+  
   # order paginated recipes by most recently updated
   # default_scope -> { order(updated_at: :desc) }
   
